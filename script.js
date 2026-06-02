@@ -65,15 +65,20 @@ text.split("").forEach((finalChar, index) => {
 
     setTimeout(() => {
 
-        /* Read actual height so it works on both desktop (80px) and mobile (50px) */
-        const letterHeight =
-        box.querySelector(".letter").offsetHeight || 80;
+        requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
 
-        const move =
-        ((loops - 1) * alphabet.length + target) * letterHeight;
+            const letterHeight =
+            box.querySelector(".letter").offsetHeight || 80;
 
-        strip.style.transform =
-        `translateY(-${move}px)`;
+            const move =
+            ((loops - 1) * alphabet.length + target) * letterHeight;
+
+            strip.style.transform =
+            `translateY(-${move}px)`;
+
+        });
+        });
 
     }, index * 80);
 
