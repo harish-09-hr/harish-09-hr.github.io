@@ -1,5 +1,8 @@
 /* ================= RESET ================= */
-
+body{
+  overflow-x: hidden;
+  overflow-y: auto;
+}
 html, body{
     width:100%;
     overflow-x:hidden;
@@ -38,7 +41,7 @@ body{
     justify-content:center;
     align-items:center;
     gap:0;
-    font-size:70px;
+    font-size:clamp(24px, 6vw, 70px);
     font-weight:bold;
     max-width:100vw;
     overflow:hidden;
@@ -61,7 +64,7 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    font-size:70px;
+    font-size:clamp(24px, 6vw, 70px);
     font-weight:bold;
 }
 
@@ -79,7 +82,7 @@ body{
 
 .split{
     position:absolute;
-    font-size:70px;
+    font-size:clamp(24px, 6vw, 70px);
     font-weight:bold;
     white-space:pre;
     transition:1s ease;
@@ -283,7 +286,7 @@ body{
 
     /* ROLLING NAME FIX */
     #rollingName{
-        font-size:32px;
+        
         max-width:100vw;
         overflow:hidden;
     }
@@ -300,7 +303,7 @@ body{
 
     /* SPLIT FIX */
     #splitContainer{
-        width:100%;
+
         overflow:hidden;
     }
 
