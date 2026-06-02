@@ -22,7 +22,7 @@ document.querySelector(".bottom-half").textContent = text;
    ROLLING NAME
 --------------------- */
 
-text.split("").forEach((finalChar,index)=>{
+text.split("").forEach((finalChar, index) => {
 
     const box =
     document.createElement("div");
@@ -38,9 +38,9 @@ text.split("").forEach((finalChar,index)=>{
 
     const loops = 4;
 
-    for(let i=0;i<loops;i++){
+    for (let i = 0; i < loops; i++) {
 
-        alphabet.split("").forEach(ch=>{
+        alphabet.split("").forEach(ch => {
 
             const div =
             document.createElement("div");
@@ -63,10 +63,14 @@ text.split("").forEach((finalChar,index)=>{
     const target =
     alphabet.indexOf(finalChar);
 
-    setTimeout(()=>{
+    setTimeout(() => {
+
+        /* Read actual height so it works on both desktop (80px) and mobile (50px) */
+        const letterHeight =
+        box.querySelector(".letter").offsetHeight || 80;
 
         const move =
-        ((loops - 1) * alphabet.length + target) * 80;
+        ((loops - 1) * alphabet.length + target) * letterHeight;
 
         strip.style.transform =
         `translateY(-${move}px)`;
@@ -79,7 +83,7 @@ text.split("").forEach((finalChar,index)=>{
    AFTER ROLLING
 --------------------- */
 
-setTimeout(()=>{
+setTimeout(() => {
 
     rollingName.style.display =
     "none";
@@ -93,7 +97,7 @@ setTimeout(()=>{
     const bottom =
     document.querySelector(".bottom-half");
 
-    setTimeout(()=>{
+    setTimeout(() => {
 
         top.style.transform =
         "translateY(-18px)";
@@ -101,16 +105,16 @@ setTimeout(()=>{
         bottom.style.transform =
         "translateY(18px)";
 
-    },100);
+    }, 100);
 
-    setTimeout(()=>{
+    setTimeout(() => {
 
         continueBtn.style.opacity =
         "1";
 
-    },600);
+    }, 600);
 
-},4500);
+}, 4500);
 
 /* ---------------------
    CLICK TO CONTINUE
@@ -118,7 +122,7 @@ setTimeout(()=>{
 
 continueBtn.addEventListener(
 "click",
-()=>{
+() => {
 
     const top =
     document.querySelector(".top-half");
@@ -135,7 +139,7 @@ continueBtn.addEventListener(
     bottom.style.transform =
     "translateY(120vh)";
 
-    setTimeout(()=>{
+    setTimeout(() => {
 
         homePage.style.opacity =
         "1";
@@ -143,6 +147,6 @@ continueBtn.addEventListener(
         homePage.style.pointerEvents =
         "auto";
 
-    },700);
+    }, 700);
 
 });
